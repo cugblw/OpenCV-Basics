@@ -1,16 +1,21 @@
+""" OpenCV读取图片，视频"""
+
 import cv2
 
 # image
 """ 
-img = cv2.imread("C:/Users/wsm/Desktop/xRZ2dGS.jpg")
-img = cv2.resize(img,(0,0),fx=0.3,fy=0.3)
-cv2.imshow('Scenery',img)
+# img = cv2.imread("C:/Users/cugbl/Desktop/girl.jpg")
+img = cv2.imread("res/colorcolor.jpg")
+img = cv2.resize(img,(0,0),fx=0.5,fy=0.5)
+cv2.imshow('dog',img)
 cv2.waitKey(0) 
-"""
+ """
 
-# Video
+# # Video
 
-# video = cv2.VideoCapture("E:/Coding/Python/OpenCV/Guide Dogs.mp4")
+# 读取视频信息
+# video = cv2.VideoCapture("res/Guide Dogs.mp4")
+# 读取相机镜头
 video = cv2.VideoCapture(0)
 while True:
     next, frame = video.read()
@@ -19,6 +24,6 @@ while True:
         cv2.imshow('img', frame)
     else:
         break
-
+    ## 键盘按下q才会终止
     if cv2.waitKey(20) == ord('q'):
         break
